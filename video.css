@@ -86,7 +86,7 @@
 @media (max-width: 600px) {
   .video-grid {
     grid-template-columns: 1fr 1fr; /* 2 per row */
-     padding-right: 20px;
+     padding-right: 30px;
      padding-left: 20px;
   }
   .video-title {
@@ -121,5 +121,6 @@
   bottom: 8px;
   right: 5px;
 }                                              
+
 
 
