@@ -1,23 +1,24 @@
 /* ======================================================
    GENERAL VIDEO PREVIEW STYLES
-   (Ensuring proper title clipping and alignment)
    ====================================================== */
 
-body .thumbnail-container {
+.thumbnail-container {
   position: relative;
+  /* Changed from inline-block to block for better mobile flow */
   display: block; 
   width: 100%;
 }
 
-body .thumbnail {
+.thumbnail {
   width: 100%;
+  /* Ensures the video thumbnail maintains a standard 16:9 aspect ratio */
   aspect-ratio: 16 / 9; 
   border-radius: 10px;
   object-fit: cover;
   display: block;
 }
 
-body .video-duration {
+.video-duration {
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -30,8 +31,8 @@ body .video-duration {
   z-index: 10;
 }
 
-/* Forcing 2-line title (Your "2 videos in vertical side" request) */
-body .video-title {
+/* Ensure the video title is limited to 2 lines (your "2 videos in vertical side" request) */
+.video-title {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.3;
@@ -43,14 +44,16 @@ body .video-title {
   overflow: hidden;
 }
 
-body .video-info-grid {
+/* Using .video-duration, so removed redundant .video-time styles */
+
+.video-info-grid {
   display: grid;
   /* Standard layout for channel picture and text block */
   grid-template-columns: 40px 1fr;
   column-gap: 12px; 
 }
 
-body .profile-picture {
+.profile-picture {
   width: 36px;
   height: 36px;
   object-fit: cover;
@@ -58,69 +61,71 @@ body .profile-picture {
   display: block;
 }
 
-body .thumbnail-row {
+.thumbnail-row {
   margin-bottom: 8px;
   position: relative;
 }
 
-body .video-author,
-body .video-stats {
+.video-author,
+.video-stats {
   font-size: 12px;
   color: rgb(96, 96, 96);
   margin:0;
 }
 
-body .video-author {
+.video-author {
   margin-bottom: 4px;
 }
 
+
 /* ======================================================
-   RESPONSIVE GRID STYLES (Focusing on 3 columns)
+   RESPONSIVE GRID STYLES
    ====================================================== */
 
-/* Default/Desktop/Tablet Layout: FIXED 3 VIDEOS PER ROW (Your desired main horizontal view) */
-body .video-grid {
+/* Default/Desktop/Tablet Layout: FIXED 3 VIDEOS PER ROW (Your desired main view) */
+.video-grid {
   display: grid;
   gap: 16px;
   padding: 20px;
-  /* Enforcing 3 equal columns */
   grid-template-columns: 1fr 1fr 1fr;
-  /* Setting minimum content area based on sidebar width (approx 72px) */
-  margin-left: 72px; 
+}
+
+/* Tablet/Larger Mobile Landscape (601px to 900px) - Maintains 3 per row */
+@media (min-width: 601px) and (max-width: 900px) {
+  .video-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 /* Mobile Layout: FIXED 2 VIDEOS PER ROW (Max 600px) */
 @media (max-width: 600px) {
-  body .video-grid {
+  .video-grid {
     grid-template-columns: 1fr 1fr; /* FIXED 2 equal columns */
     gap: 12px; 
     padding: 10px;
-    /* Removing the sidebar margin for mobile view */
-    margin-left: 0;
   }
-  
   /* Tighter video info layout for mobile */
-  body .video-info-grid {
+  .video-info-grid {
     grid-template-columns: 32px 1fr;
     column-gap: 6px;
   }
-  body .profile-picture {
+  .profile-picture {
     width: 32px;
     height: 32px;
   }
-  body .video-title {
+  .video-title {
     font-size: 11px;
     line-height: 1.2;
   }
-  body .video-author,
-  body .video-stats {
+  .video-author,
+  .video-stats {
     font-size: 10px;
   }
 }
 
-/* Optional: Re-introduce 4 columns for very large screens */
+/* Optional: If you want 4 videos per row on very large screens */
 @media (min-width: 901px) {
-  body .video-grid {
+  .video-grid {
     grid-template-columns: 1fr 1fr 1fr 1fr; 
   }
 }
