@@ -1,0 +1,65 @@
+body {
+  background-color: rgb(250, 192, 202);
+  font-family: fantasy;
+}
+
+
+
+
+
+
+
+
+.shorts-container {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  flex-direction: row;
+  align-items: stretch;
+
+  /* Make items go top to bottom */
+
+}
+
+
+.flex-container {
+  display: flex;
+
+}
+
+.shorts-card {
+  min-width: 180px;
+  min-height: fit-content;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+  flex: 2 1 180px;
+  /* Grows twice as much as siblings with flex-grow: 1 */
+}
+
+
+
+
+.shorts-caption {
+  display: flex;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  text-decoration: wavy;
+
+}
+
+
+.shorts-card img {
+  width: fit-content;
+  height: 320px;
+  display: block;
+  object-fit: cover;
+}
