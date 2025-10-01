@@ -2,7 +2,6 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  /* or fixed width like 300px */
 }
 
 .thumbnail {
@@ -25,9 +24,6 @@
   font-weight: bold;
 }
 
-
-
-
 .video-title {
   margin-top: 0;
   font-size: 14px;
@@ -47,7 +43,6 @@
   bottom: 8px;
   right: 8px;
 }
-
 
 .video-info-grid {
   display: grid;
@@ -76,11 +71,13 @@
   margin-bottom: 4px;
 }
 
+/* Responsive video grid */
 .video-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   column-gap: 16px;
   row-gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
 }
 
 @media (max-width: 750px) {
