@@ -81,14 +81,14 @@
 .video-grid {
   display: grid;
   gap: 16px;
-  padding: 20px;
+  padding: 10px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
 }
 
 @media (max-width: 600px) {
   .video-grid {
     grid-template-columns: 1fr 1fr; /* 2 per row */
-    margin-left:0;
+    
   }
   .video-title {
     font-size: 12px;
@@ -98,7 +98,7 @@
 @media (min-width: 601px) and (max-width: 900px) {
   .video-grid {
     grid-template-columns: 1fr 1fr 1fr; /* 3 per row */
-    margin-left:0;
+    
   }
 }
 
@@ -107,6 +107,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 per row */
   }
 }
+
 
 
 
