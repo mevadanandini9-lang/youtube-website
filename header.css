@@ -1,3 +1,8 @@
+body {
+  background-color: rgb(250, 192, 202);
+  font-family: fantasy;
+}
+
 .header {
   height: 55px;
 
@@ -164,4 +169,5 @@
 .current-user-picture {
   height: 32px;
   border-radius: 16px;
+
 }
